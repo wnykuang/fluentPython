@@ -20,5 +20,6 @@ suit_values = dict(spades = 3, hearts = 2, diamonds = 1, clubs = 0)
 def spades_high(card):
     rankVal = FrenchDeck.ranks.index(card.rank)
     #.index return the index of card.rank in FrenchDeck.ranks
-    print(rankVal)
+    
+    #print(rankVal, card.rank)
     return rankVal * len(suit_values) + suit_values[card.suit]
