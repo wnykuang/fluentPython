@@ -36,3 +36,11 @@ On the other hand, if you are constantly adding and removing items from the ends
 
 #### Arrays
 If the list will only contain numbers, an ```array.array``` is more efficient than a ```list```: it supports all mutable sequence operations, and additional methods for fast loading and saving such as ```.frombytes``` and ```.tofile```.   
+detail example in example220.py
+
+##### Memory Views
+Using notation similar to the ```array``` module, the ```memoryview.cast``` method lets you change the way multiple bytes are read or written as units without moving bits around(just like the C cast operator).memoryview.cast returns yet another memoryview object, always sharing the same memory.
+
+#### Deques and other queues
+The ```list.pop(0)``` is an O(n) operation since the entire list must be shifted.    
+The class ```collections.deque``` is a thread-safe double-ended queue deisigned for fast inserting and removing from both ends.    
