@@ -44,3 +44,11 @@ Using notation similar to the ```array``` module, the ```memoryview.cast``` meth
 #### Deques and other queues
 The ```list.pop(0)``` is an O(n) operation since the entire list must be shifted.    
 The class ```collections.deque``` is a thread-safe double-ended queue deisigned for fast inserting and removing from both ends.    
+The append and popleft operations are atomic, so deque is safe to use as a LIFO queue in multihreaded applications without the need of using locks.    
+
+besides deque, Python standard Lib comes with:
+queue, multiprocessing[Queue], syncio, asyncio, heapq(priority queue)
+
+#### Summary
+PEP 3132 -- Extended Iterable Unpacking is the canonical source to read about the new use of *extra as a target in parallel assignments.   
+PEP 448 -- Additional Unpacking Generalizations.    
