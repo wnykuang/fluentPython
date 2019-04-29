@@ -20,6 +20,19 @@ t[2] += [50,60]
 
 ## Managing Ordered Sequences with bisect
 
-Difference between bisect and bisect_left:
+### Difference between bisect and bisect_left:
    bisect_right returns an insertion point after the exiting item.
 bisect_left returns the position of the existing item.
+
+### Inserting with bisect.insort
+insort(seq, item) inserts item into seq so as to keep seq in ascending order.
+   
+There is also insort_left uses bisect_left.
+
+### When a List Is Not the Answer
+
+If you need to store 10 million floating-point values, an array is much more efficient bacause an arrayy does not acutally hold full-fledged float objects, but only the packed bytes representing their machine values - just like an array in the C language.   
+On the other hand, if you are constantly adding and removing items from the ends of a list as a FIFO or LIFO data structure, a deque (double-ended queue) works faster.
+
+#### Arrays
+If the list will only contain numbers, an ```array.array``` is more efficient than a ```list```: it supports all mutable sequence operations, and additional methods for fast loading and saving such as ```.frombytes``` and ```.tofile```.   
